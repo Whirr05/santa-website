@@ -11,31 +11,98 @@
 
     <div class="container">
         <div class="cunt">
-            countdown
+         
+        <div id="count">Christmas Count Loading</div>
         </div>
         <div class="nav1">
-           mini navbar
+            <div class="santanav" id="santalink" style="visibility: visable;">
+                <a id="Play With Santa" href="santa.html" class="active">Click to Play With Santa</a>
+            </div>
         </div>
         <div class="logo">
-            <img src="logo.png" alt="blank logo" width="100%">
+        
+            <img src="logo.png" alt="blank logo" width="300px">
         </div>
         <div class="nav2">
             <center>
             <div id="menulinks" class="topnav" id="myLinks" style="visibility: visable;">
-                <a id="home" href="index.html" class="active">Home</a>
-                <a id="menulinks" href="news.html">News</a>
-                <a id="menulinks"href="contact.html">Contact</a>
-                <a id="menulinks"href="about.html">About</a>
+                <a id="menulinks" href="index.html" class="active">Home</a>
+                <a id="menulinks" href="santa.html">Play!</a>
+                <a id="menulinks"href="contact.html">Contact Us</a>
+                
             </div>
             </center>
         </div>
-        <div class="Foot"></div>
-        <div class="imgs">
-          
+        <div class="imgs" id="examples">
+     </div>
+        <div class="grd3">
+            <p>
+                text stuff content for the website i dont know i guess
+                the client would add what they want here but at least
+                the have to option to! text stuff content for the website
+                i dont know i guess!
+            </p>
         </div>
-        <div class="grd3"></div>
-        <div class="grd1"></div>
-        <div class="grd2"></div>
+        <div class="grd1">
+            <p>
+                text stuff content for the website i dont know i guess
+                the client would add what they want here but at least
+                the have to option to! text stuff content for the website
+                i dont know i guess!
+            </p>
+        </div>
+        <div class="grd2">
+            <p>Example of a Letter to Santa</p>
+        </div>
+        <div class="Foot">Footer and Stuff in here...</div>
+        
+        
       </div>
 </body>
 </html>
+<script>
+    var example = document.getElementById("examples");
+    var list = "url('list.png')";
+    var list1 = "url('list1.png')";
+    var list2 = "url('list2.png')";
+    var list3 = "url('list3.png')";
+    var list4 = "url('list4.png')";
+    
+    const wishlists = [list, list1, list2, list3, list4];
+
+    const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffle(wishlists);
+    
+    example.style.backgroundImage = wishlists[0];
+    
+</script>
+<script>
+    
+    
+    var countDownDate = new Date("Dec 25, 2022 00:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      //document.getElementById("count").innerHTML = days + " : " + hours + " : "
+      //+ minutes + " : " + seconds;
+      document.getElementById("count").innerHTML = days + " days until christmas ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("count").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+
+    
+</script>
