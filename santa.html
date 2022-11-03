@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<HTMl>
+    <head>
+        <link rel="stylesheet" href="cards.css">
+        <link rel="stylesheet" href="nav.css">
+    </head> 
+<body>
+    <div id="menulinks" class="topnav" id="myLinks" style="visibility: visable;">
+        <a id="menulinks" href="index.html" class="active">Home</a>
+        <a id="menulinks" href="santa.html">Play!</a>
+        <a id="menulinks"href="contact.html">Contact Us</a>
+        
+    </div>
+    
+    <div class="container">
+        
+        <div class="cards" id="card1"></div>
+        <div class="cards" id="card2"></div>
+        <div class="cards" id="card3"></div>
+        <div class="cards"id="card4"></div>
+        <div class="cards"id="card5"></div>
+        <div class="cards"id="card6"></div>
+        <div class="cards"id="card7"></div>
+        <div class="cards"id="card8"></div>
+        <div class="wall2">
+            
+        </div>
+        <div class="wall1"></div>
+        <div class="edge1">
+            <center><h1 id = "cardText">Click The Cards To Find Santa!!</h1></center>
+        </div>
+        <div class="edge2">
+           <center> <button onclick="reset()" type="button" id="btn" >Replay</button> </center>
+        </div>
+    </div>
+</body>
+</HTMl>
+<script>
+    var card1 = document.getElementById("card1");
+    var card2 = document.getElementById("card2");
+    var card3 = document.getElementById("card3");
+    var card4 = document.getElementById("card4");
+    var card5 = document.getElementById("card5");
+    var card6 = document.getElementById("card6");
+    var card7 = document.getElementById("card7");
+    var card8 = document.getElementById("card8");
+    
+    var santa = "url('winner card.png')";
+    var lose = "url('loser card.png')";
+    var score = 8;
+    var foundSanta = false;
+    const cards = [santa, lose, lose, lose, lose, lose, lose, lose];
+    
+
+    const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+   
+    function reset(){
+        window.location.reload();
+    } 
+    
+    
+    shuffle(cards);
+    
+
+    card1.onclick = function() {
+        if (!foundSanta){
+            card1.style.backgroundImage = cards[0];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[0] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card2.onclick = function() {
+        if (!foundSanta){
+            card2.style.backgroundImage = cards[1];
+            card1.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[1] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card3.onclick = function() {
+        if (!foundSanta){
+            card3.style.backgroundImage = cards[2];
+            card2.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[2] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card4.onclick = function() {
+        if (!foundSanta){
+            card4.style.backgroundImage = cards[3];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+            
+        
+            if (cards[3] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card5.onclick = function() {
+        if (!foundSanta){
+            card5.style.backgroundImage = cards[4];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[4] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card6.onclick = function() {
+        if (!foundSanta){
+            card6.style.backgroundImage = cards[5];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[5] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card7.onclick = function() {
+        if (!foundSanta){
+            card7.style.backgroundImage = cards[6];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+            card8.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[6] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    card8.onclick = function() {
+        if (!foundSanta){
+            card8.style.backgroundImage = cards[7];
+            card2.style.backgroundImage = "url('cards.png')";
+            card3.style.backgroundImage = "url('cards.png')";
+            card4.style.backgroundImage = "url('cards.png')";
+            card5.style.backgroundImage = "url('cards.png')";
+            card6.style.backgroundImage = "url('cards.png')";
+            card7.style.backgroundImage = "url('cards.png')";
+            card1.style.backgroundImage = "url('cards.png')";
+        
+            if (cards[7] == santa){
+                var tmp = "score = "+score;
+                if (score >= 0){
+                    document.getElementById("cardText").textContent = "You Win!";
+                }
+                else{
+                    document.getElementById("cardText").textContent = "You Lose!";
+                }
+                foundSanta = true;
+
+            }
+            else{
+                document.getElementById("cardText").textContent = "not santa";
+                score = score-1;
+            }
+        }
+    }
+    
+
+</script>
