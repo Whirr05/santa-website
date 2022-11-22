@@ -16,7 +16,7 @@
         </div>
         <div class="nav1">
             <div class="santanav" id="santalink" style="visibility: visable;">
-                <a id="Play With Santa" href="santa.html" class="active">Click to Play With Santa</a>
+                <a id="Play With Santa" href="santa.html" class="active" id="change">Click to Play With Santa</a>
             </div>
         </div>
         <div class="logo">
@@ -27,8 +27,10 @@
             <center>
             <div id="menulinks" class="topnav" id="myLinks" style="visibility: visable;">
                 <a id="menulinks" href="index.html" class="active">Home</a>
-                <a id="menulinks" href="santa.html">Play!</a>
-                <a id="menulinks"href="contact.html">Contact Us</a>
+                <a id="menulinks"href="contact.php">Write Your Wishlist</a>
+                <a id="menulinks"href="https://santatracker.google.com">Santa Tracker</a>
+               <!-- <input id="font_switch" name="font_switch" type="button"/>
+                <label for="font_switch" id="special">For Special Children</label><br>-->
                 
             </div>
             </center>
@@ -36,7 +38,7 @@
         <div class="imgs" id="examples">
      </div>
         <div class="grd3">
-            <p>
+            <p class="change">
                 text stuff content for the website i dont know i guess
                 the client would add what they want here but at least
                 the have to option to! text stuff content for the website
@@ -44,7 +46,7 @@
             </p>
         </div>
         <div class="grd1">
-            <p>
+            <p class="change">
                 text stuff content for the website i dont know i guess
                 the client would add what they want here but at least
                 the have to option to! text stuff content for the website
@@ -60,6 +62,13 @@
       </div>
 </body>
 </html>
+<script>
+    const button = document.querySelector('#font_switch');
+    button.onclick = () => {
+        //alert("clicked");
+        document.getElementsByClassName("change").style ="font-family:sans-serif; font-size: 20px;"
+    };
+</script>
 <script>
     var example = document.getElementById("examples");
     var list = "url('list.png')";
